@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"penguin.com/emot/Controller"
 )
 
 func main() {
@@ -11,10 +12,11 @@ func main() {
 	r := gin.Default()
 
 	//Grouping for covid API
-	//covid_api := r.Group("/covid")
+	emot_api := r.Group("/back-emot")
 	{
 		//Endpoint for Getting Covid Summary
-		//covid_api.GET("/summary", controller.SummaryController)
+		emot_api.GET("/newrec", Controller.UserController)
+		emot_api.GET("/newuser", Controller.UserController)
 	}
 
 	//Check for wrong route
